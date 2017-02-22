@@ -1,14 +1,36 @@
 What happens when you initialize a repository? Why do you need to do it?
 
+-> An empty repository is created with zero commits in it. We need to do so to keep a track of changes in our files through making commits.
+
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
+-> Staging area is like an temporary area for files that are yet to be committed. Only files in staging area will be included in the commit executed next time. It helps to differentiate changes in the working directory through several commits where each commit may refer to a logical change in files.
+
 How can you use the staging area to make sure you have one commit per logical change?
+
+->First we add files which have one logical change we want to commit, and after making it sure we have staged the files,we make a commit. Next we do the same for other files that have a logical change and needs to be committed.
+
 
 What are some situations when branches would be helpful in keeping your history organized? How would branches help?
 
+->When we want to try an experimental feature while keeping the original  code working without breaking. To do so, we keep master branch clean of any new changes, instead make an experimental branch for a new feature that needs experimenting. When the experiment is fully functional and stable we can go ahead and merge this experimenting branch into master branch.
+
+
 How do the diagrams help you visualize the branch structure?
+
+->By using git log --graph --oneline [branch names...], we can see how the whole branch structure was developed and at which point each branch was actually created. This way we can see overview of the whole structure of the software we are working on. We can also when branches were created and when merged.
 
 What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
 
+All the commits of the second branch are merged into the first branch, and the resluting merge commit becomes the new head of your current branch. The diagram shown by git log --graph cleary shows that merged commit has two parents, which correspond to the prior heads of each merged branch.
+
 What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+Pros:
+-> Saves your time, especially when each non-conflicting merge is trivial.
+-> Makes you concentrate on the changes which actually contain conflicts.
+
+Cons:
+-> Can't thnink of any.
+
